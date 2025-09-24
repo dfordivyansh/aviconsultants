@@ -145,27 +145,28 @@
 @layer components {
   /* Professional Button Variants */
   .btn-corporate {
-    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-lg font-medium;
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg;
     @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
-    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1;
+    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1 hover:scale-105;
   }
   
   .btn-accent {
-    @apply bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 rounded-lg font-medium;
+    @apply bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 rounded-xl font-semibold text-lg;
     @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
-    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1;
+    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1 hover:scale-105;
   }
   
   .btn-outline {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground;
-    @apply px-8 py-4 rounded-lg font-medium transition-[var(--transition-smooth)];
+    @apply px-8 py-4 rounded-xl font-semibold text-lg transition-[var(--transition-smooth)] hover:scale-105;
   }
   
   /* Professional Cards */
   .card-corporate {
-    @apply bg-card border border-border rounded-xl p-6;
+    @apply bg-card border border-border rounded-2xl p-8;
     @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
     @apply transition-[var(--transition-smooth)] hover:-translate-y-2;
+    @apply backdrop-blur-sm;
   }
   
   /* Gradient Backgrounds */

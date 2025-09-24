@@ -84,33 +84,33 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="card-corporate group cursor-pointer"
+              className="card-corporate group cursor-pointer hover:shadow-hover hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
             >
               {/* Service Icon */}
-              <div className={`w-14 h-14 bg-${service.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-7 h-7 text-white" />
+              <div className={`w-16 h-16 ${service.color === 'corporate-blue' ? 'bg-corporate-blue' : 'bg-accent-red'} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                <service.icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Service Title */}
-              <h3 className="font-poppins font-semibold text-lg text-corporate-blue mb-3 group-hover:text-accent-red transition-colors duration-300">
+              <h3 className="font-poppins font-bold text-xl text-corporate-blue mb-4 group-hover:text-accent-red transition-colors duration-300 leading-tight">
                 {service.title}
               </h3>
 
               {/* Service Description */}
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              <p className="text-foreground text-sm mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Service Features */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center space-x-2">
-                    <div className={`w-1.5 h-1.5 bg-${service.color} rounded-full flex-shrink-0`}></div>
-                    <span className="text-xs text-muted-foreground">{feature}</span>
+                  <div key={featureIndex} className="flex items-center space-x-3">
+                    <div className={`w-2 h-2 ${service.color === 'corporate-blue' ? 'bg-corporate-blue' : 'bg-accent-red'} rounded-full flex-shrink-0`}></div>
+                    <span className="text-sm text-foreground font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
