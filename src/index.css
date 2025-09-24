@@ -1,42 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Corporate Design System for Consulting Firms */
 
 @layer base {
   :root {
+    /* Corporate Color Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 210 17% 13%;
+    
+    /* Corporate Blue - Trust & Stability */
+    --corporate-blue: 206 67% 30%;
+    --corporate-blue-light: 206 67% 45%;
+    --corporate-blue-dark: 206 67% 20%;
+    
+    /* Accent Red - Energy & CTAs */
+    --accent-red: 0 67% 50%;
+    --accent-red-light: 0 67% 60%;
+    --accent-red-dark: 0 67% 40%;
+    
+    /* Professional Greys */
+    --soft-grey: 0 0% 96%;
+    --soft-grey-medium: 0 0% 88%;
+    --charcoal: 210 17% 13%;
+    --charcoal-light: 210 17% 25%;
+    
+    /* Design System Tokens */
+    --primary: 206 67% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 206 67% 45%;
+    --primary-dark: 206 67% 20%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 210 17% 13%;
+    
+    --accent: 0 67% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 210 17% 46%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 210 17% 13%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --popover-foreground: 210 17% 13%;
+    
+    --destructive: 0 67% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 206 67% 30%;
     --radius: 0.5rem;
+    
+    /* Professional Gradients */
+    --gradient-corporate: linear-gradient(135deg, hsl(var(--corporate-blue)) 0%, hsl(var(--corporate-blue-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--corporate-blue-dark)) 0%, hsl(var(--corporate-blue)) 50%, hsl(var(--corporate-blue-light)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-red)) 0%, hsl(var(--accent-red-light)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--soft-grey)) 0%, hsl(var(--background)) 100%);
+    
+    /* Professional Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--corporate-blue) / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(var(--corporate-blue) / 0.1);
+    --shadow-hover: 0 8px 30px -8px hsl(var(--corporate-blue) / 0.2);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +134,129 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-corporate {
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-lg font-medium;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
+    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1;
+  }
+  
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 rounded-lg font-medium;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
+    @apply transition-[var(--transition-smooth)] transform hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+    @apply px-8 py-4 rounded-lg font-medium transition-[var(--transition-smooth)];
+  }
+  
+  /* Professional Cards */
+  .card-corporate {
+    @apply bg-card border border-border rounded-xl p-6;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)];
+    @apply transition-[var(--transition-smooth)] hover:-translate-y-2;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-corporate {
+    background: var(--gradient-corporate);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Professional Animations */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .text-gradient-corporate {
+    background: var(--gradient-corporate);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-corporate {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* Professional Keyframes */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--corporate-blue) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--corporate-blue) / 0.5);
   }
 }

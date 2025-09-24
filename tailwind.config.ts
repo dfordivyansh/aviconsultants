@@ -13,15 +13,42 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Corporate Colors
+        'corporate-blue': {
+          DEFAULT: "hsl(var(--corporate-blue))",
+          light: "hsl(var(--corporate-blue-light))",
+          dark: "hsl(var(--corporate-blue-dark))",
+        },
+        'accent-red': {
+          DEFAULT: "hsl(var(--accent-red))",
+          light: "hsl(var(--accent-red-light))",
+          dark: "hsl(var(--accent-red-dark))",
+        },
+        'soft-grey': {
+          DEFAULT: "hsl(var(--soft-grey))",
+          medium: "hsl(var(--soft-grey-medium))",
+        },
+        'charcoal': {
+          DEFAULT: "hsl(var(--charcoal))",
+          light: "hsl(var(--charcoal-light))",
+        },
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,6 +65,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          dark: "hsl(var(--accent-red-dark))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
