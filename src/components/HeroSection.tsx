@@ -1,16 +1,10 @@
 import { ArrowRight, Award, Building, TrendingUp } from "lucide-react";
 import heroImage from "../assets/hero-skyline.jpg";
-
 const HeroSection = () => {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="City skyline with architectural blueprints" 
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="City skyline with architectural blueprints" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-corporate-blue-dark/90 via-corporate-blue/70 to-corporate-blue-light/50"></div>
       </div>
 
@@ -29,7 +23,7 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-7xl font-poppins font-bold text-white mb-6 leading-tight">
               Trusted <span className="text-gradient-corporate bg-gradient-to-r from-accent-red to-accent-red-light bg-clip-text text-transparent">Engineering</span>,<br />
               Valuation &<br />
-              <span className="text-gradient-corporate bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">Business Intelligence</span>
+              <span className="text-gradient-corporate bg-gradient-to-r from-white to-gray-200 bg-clip-text text-slate-300">Business Intelligence</span>
             </h1>
           </div>
 
@@ -102,8 +96,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
