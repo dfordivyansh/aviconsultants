@@ -1,7 +1,16 @@
-import { ArrowRight, Award, Building, TrendingUp } from "lucide-react";
+import { ArrowRight, Award, Building, TrendingUp, CheckCircle } from "lucide-react";
 import heroImage from "../assets/hero-skyline.jpg";
+import aviLogo from "../assets/avi-logo.png";
+
 const HeroSection = () => {
-  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="City skyline with architectural blueprints" className="w-full h-full object-cover" />
@@ -17,51 +26,64 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Logo & Brand */}
+          <div className="animate-scale-in mb-8">
+            <img src={aviLogo} alt="Avi Consultants" className="h-24 md:h-32 w-auto mx-auto mb-6 drop-shadow-2xl brightness-0 invert" />
+          </div>
+
           {/* Main Headline */}
           <div className="animate-slide-up">
-            <h1 className="text-5xl md:text-7xl font-poppins font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-              Trusted <span className="text-accent-red drop-shadow-lg">Engineering</span>,<br />
-              Valuation &<br />
-              <span className="text-white drop-shadow-lg">Business Intelligence</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+              Premium <span className="text-accent-red drop-shadow-lg">Engineering</span>, Valuation &<br />
+              <span className="text-white drop-shadow-lg">Business Intelligence</span> Solutions
             </h1>
           </div>
 
           {/* Subtitle */}
           <div className="animate-slide-up delay-200">
-            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl leading-relaxed drop-shadow-lg">
-              Delivering precision, credibility, and excellence in valuation & 
-              structural design for over <span className="text-accent-red font-bold bg-white/20 px-2 py-1 rounded">20 years</span>.
+            <p className="text-xl md:text-2xl text-white mb-4 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+              Delivering precision, credibility, and excellence for over <span className="text-accent-red font-bold bg-white/20 px-3 py-1 rounded-lg">20 years</span>
             </p>
-          </div>
-
-          {/* Credentials */}
-          <div className="animate-slide-up delay-300">
-            <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 mb-8 max-w-2xl border border-white/30 shadow-2xl">
-              <p className="text-white text-lg">
-                <span className="font-bold text-xl">Er. Ashutosh Chandra</span><br />
-                <span className="text-white/90 font-medium">B.E. Civil (Hons.), F.I.V., M.I.E. (India)</span><br />
-                <span className="text-accent-red font-bold bg-white/10 px-2 py-1 rounded mt-2 inline-block">Govt. Approved Valuer & Chartered Engineer</span>
-              </p>
+            <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm md:text-base mb-8">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-accent-red" />
+                <span>Govt. Approved Valuer</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-accent-red" />
+                <span>Chartered Engineer</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-accent-red" />
+                <span>50+ Bank Approvals</span>
+              </div>
             </div>
           </div>
 
+
           {/* CTA Buttons */}
-          <div className="animate-slide-up delay-400">
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="btn-accent group">
+          <div className="animate-slide-up delay-300">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
+              <button 
+                onClick={() => scrollToSection("services")}
+                className="btn-accent group"
+              >
                 Explore Services
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="btn-outline bg-white/10 border-white text-white hover:bg-white hover:text-corporate-blue backdrop-blur-sm">
+              <button 
+                onClick={() => scrollToSection("contact")}
+                className="btn-outline bg-white/10 border-2 border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm"
+              >
                 Get Consultation
               </button>
             </div>
           </div>
 
           {/* Statistics */}
-          <div className="animate-fade-in delay-600">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+          <div className="animate-fade-in delay-500">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 text-center border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-300">
                 <div className="flex justify-center mb-3">
                   <Award className="w-10 h-10 text-accent-red" />
