@@ -34,7 +34,7 @@ const HeroSection = () => {
 
           {/* Main Headline */}
           <div className="animate-slide-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-6 leading-tight drop-shadow-2xl">
               Premium <span className="text-accent-red drop-shadow-lg">Engineering</span>, Valuation &<br />
               <span className="text-white drop-shadow-lg">Business Intelligence</span> Solutions
             </h1>
